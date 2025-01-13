@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>MYPOPOL</title>
@@ -16,20 +16,20 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        .login-wrapper{
+        .regist-wrapper{
             width: 500px;
             height: 550px;
             padding: 40px;
             box-sizing: border-box;
         }
 
-        .login-wrapper > h2{
+        .regist-wrapper > h2{
             font-size: 32px;
             color: #6A24FE;
             margin-bottom: 15px;
             text-align:center;
         }
-        #login-form > input{
+        #regist-form > input{
             width: 100%;
             height: 48px;
             padding: 0 10px;
@@ -38,10 +38,10 @@
             border-radius: 6px;
             background-color: #F8F8F8;
         }
-        #login-form > input::placeholder{
+        #regist-form > input::placeholder{
             color: #D2D2D2;
         }
-        #login-form > input[type="submit"]{
+        #regist-form > input[type="submit"]{
             color: #fff;
             font-size: 16px;
             background-color: #6A24FE;
@@ -56,16 +56,19 @@
 
             transform: scale(0.75) translate(-16%, 0);
         }
+
     </style>
 </head>
 <body>
-<div id="mains" class="login-wrapper">
-    <h2>Login</h2>
-    <form id="login-form">
-        <input type="text" name="userName" placeholder="아이디">
-        <input type="password" name="userPassword" placeholder="패스워드">
-        <input type="submit" value="로그인">
-        <button type="button" onclick="location.href='회원가입페이지'">회원가입</button>
+<div id="mains" class="regist-wrapper">
+    <h2>Regist</h2>
+    <form id="regist-form" action="/RegistPageData" method="post">
+        <input type="text" th:name="userId" th:value="${userId}" placeholder="아이디">
+        <input type="text" th:name="userName" th:value="${userName}" placeholder="별명">
+        <input type="text" th:name="useremail" th:value="${useremail}" placeholder="이메일">
+        <input type="password" th:name="userPassword" th:value="${userPassword}" placeholder="패스워드">
+        <!--<input type="password" th:name="userPasswordcheck" th:value="${userPasswordcheck}" placeholder="패스워드 확인">-->
+        <input type="submit" value="회원가입">
     </form>
 </div>
 </body>

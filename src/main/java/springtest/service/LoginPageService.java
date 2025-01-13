@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springtest.data.dao.UserDataAccess;
+import springtest.data.dto.UserDTO;
 import springtest.data.entity.UserEntity;
 import springtest.data.repository.UserRepository;
 
@@ -26,4 +27,7 @@ public class LoginPageService {
     }
 
 
+    public boolean Register(UserDTO userinfo) {
+        return userDAO.RegisterInDB(userinfo);
+    }
 }
