@@ -62,11 +62,11 @@
 <body>
 <div id="mains" class="regist-wrapper">
     <h2>Regist</h2>
-    <form id="regist-form" action="/RegistPageData" method="post">
-        <input type="text" th:name="userId" th:value="${userId}" placeholder="아이디">
-        <input type="text" th:name="userName" th:value="${userName}" placeholder="별명">
-        <input type="text" th:name="useremail" th:value="${useremail}" placeholder="이메일">
-        <input type="password" th:name="userPassword" th:value="${userPassword}" placeholder="패스워드">
+    <form id="regist-form" action="thymleafversion/RegistPage" method="post">
+        <input type="text" id="userId" name="userId" placeholder="아이디">
+        <input type="text" id="userName" name="userName" placeholder="별명">
+        <input type="text" id="useremail" name="userEmail" placeholder="이메일">
+        <input type="password" id=userPassword" name="userPassword" placeholder="패스워드">
         <!--<input type="password" th:name="userPasswordcheck" th:value="${userPasswordcheck}" placeholder="패스워드 확인">-->
         <input type="submit" value="회원가입">
     </form>
